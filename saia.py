@@ -71,31 +71,31 @@ def tan(value):
 @trig.command(help="Used to find the cotangent of a decimal number")
 @click.argument("value")
 def cot(value):
-    click.echo(math.cot(math.radians(float(value))))
+    click.echo(1/math.tan(math.radians(float(value))))
 
 @trig.command(help="Used to find the secant of a decimal number")
 @click.argument("value")
 def sec(value):
-    click.echo(math.sec(math.radians(float(value))))
+    click.echo(1/math.cos(math.radians(float(value))))
 
 @trig.command(help="Used to find the cosecant of a decimal number")
 @click.argument("value")
 def cosec(value):
-    click.echo(math.cosec(math.radians(float(value))))
+    click.echo(1/math.sin(math.radians(float(value))))
 
 # Permutations
 @cli.command(help="Find the number of permutations")
 @click.argument("n")
 @click.argument("r")
 def perm(n, r):
-    click.echo(math.perm(n, r))
+    click.echo(math.perm(int(n), int(r)))
 
 # Combinations
 @cli.command(help="Find the number of combinations")
 @click.argument("n")
 @click.argument("r")
 def comb(n, r):
-    click.echo(math.comb(n, r))
+    click.echo(math.comb(int(n), int(r)))
 
 # Pascal's Triangle
 @cli.command(help="Find the numbers on the nth row of the Pascal's Triangle")
