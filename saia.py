@@ -157,27 +157,5 @@ def element(num, sym, name):
                 click.echo(f"Mass = {e.mass}")
                 click.echo(f"Density = {e.density}")
 
-@cli.command(help="To help you to catch 'em all")
-@click.option("--num", default=-1, help="National Dex number of the pokemon")
-@click.option("--name", default="", help="Name of the pokemon")
-def pokedex(num, name):
-    mon = (pyd.get(dex=num) if num != -1 else pyd.get(name=name)) if name != "" and num != -1 else pyd.get(dex=random.randint(1, 898))
-    print(f"\nNumber : {mon.dex}")
-    print(f"Name : {mon.name.capitalize()}")
-    print(f"Height : {mon.height/10}m")
-    print(f"Weight : {mon.weight/10}kg")
-    print("Type(s) : "+" ".join(map(str.capitalize, mon.types)))
-    print("\nAbilities :")
-    for a in mon.abilities:
-        print(a.name.capitalize()+(" (hidden)" if a.is_hidden else ""))
-    print("\nBase stats :")
-    stats = mon.base_stats
-    print(f" HP : {stats.hp}")
-    print(f" Attack : {stats.attack}")
-    print(f" Defence : {stats.defense}")
-    print(f" Special Attack : {stats.sp_atk}")
-    print(f" Special Defence : {stats.sp_def}")
-    print(f" Speed : {stats.speed}\n")
-
 if __name__ == "__main__":
     cli()
