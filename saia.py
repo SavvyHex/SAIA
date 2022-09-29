@@ -46,7 +46,10 @@ def cli():
 @cli.command(help="A simple calculator")
 @click.argument("expression")
 def calc(expression):
-    click.echo(eval(expression))
+    try:
+        click.echo(eval(expression))
+    except ZeroDivisionError:
+        click.echo("Cannot divide by zero")
 
 # Values of Trignometric Functions
 @cli.group(help="To find the values of trignometric functions")
@@ -71,17 +74,26 @@ def tan(value):
 @trig.command(help="Used to find the cotangent of a decimal number")
 @click.argument("value")
 def cot(value):
-    click.echo(1/math.tan(math.radians(float(value))))
+    try:
+        click.echo(1/math.tan(math.radians(float(value))))
+    except ZeroDivisionError:
+        click.echo("Infinity")
 
 @trig.command(help="Used to find the secant of a decimal number")
 @click.argument("value")
 def sec(value):
-    click.echo(1/math.cos(math.radians(float(value))))
+    try:
+        click.echo(1/math.cos(math.radians(float(value))))
+    except ZeroDivisionError:
+        click.echo("Infinity")
 
 @trig.command(help="Used to find the cosecant of a decimal number")
 @click.argument("value")
 def cosec(value):
-    click.echo(1/math.sin(math.radians(float(value))))
+    try:
+        click.echo(1/math.sin(math.radians(float(value))))
+    except ZeroDivisionError:
+        click.echo("Infinity")
 
 # Permutations
 @cli.command(help="Find the number of permutations")
