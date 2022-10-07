@@ -25,7 +25,7 @@ setup(
     keywords=['python', 'math', 'chemistry', 'elements', 'students', 'calculation'],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
-        "Intended Audience :: Students",
+        "Intended Audience :: Education",
         "Programming Language :: Python :: 3",
         "Operating System :: Unix",
         "Operating System :: MacOS :: MacOS X",
