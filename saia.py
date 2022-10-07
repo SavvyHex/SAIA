@@ -1,4 +1,5 @@
-from email.policy import default
+#!/home/savvyhex/anaconda3/bin/python
+
 import periodictable as pt
 import random
 import math
@@ -168,12 +169,12 @@ def element(num, sym, name):
                 click.echo(f"Mass = {e.mass}")
                 click.echo(f"Density = {e.density}")
 
-# ASCII art
-@cli.command(help="Generates ASCII art for an image")
-@click.argument("file_name", help="Name of the image file")
-@click.option("char", default="#", help="The ASCII character in which the art has to be generated")
+@cli.command(help="Generates ASCII art for an image and prints it onto the terminal")
+@click.argument("file_name", type=click.File("rb"))
+@click.option("--char", default="#", help="The ASCII character in which the art has to be generated")
 def ascii(file_name, char):
-    pass
+    output = am.from_image_file(file_name, columns=200, char=char)
+    click.echo(output)
 
 if __name__ == "__main__":
     cli()
