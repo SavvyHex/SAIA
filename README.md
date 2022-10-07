@@ -78,6 +78,9 @@ For Example :
 ### trig :
 It returns the value of the trignometric ratio for a specified angle. Please note that the angle should be in degrees.
 
+It requires only one argument :
+- VALUE : The angle, in degrees
+
 It has six subcommands, one for each trignometric function :
 - sin
 - cos

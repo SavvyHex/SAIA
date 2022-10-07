@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import periodictable as pt
-import pypokedex as pyd
 import random
 import math
 import click
