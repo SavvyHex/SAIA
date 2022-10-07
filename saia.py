@@ -1,9 +1,9 @@
-#!/usr/bin/python3
-
+from email.policy import default
 import periodictable as pt
 import random
 import math
 import click
+import ascii_magic as am
 
 # Utility Methods
 # Converting to superscript
@@ -167,6 +167,13 @@ def element(num, sym, name):
                 click.echo(f"{e.number}. {e.name.capitalize()} ({e.symbol})")
                 click.echo(f"Mass = {e.mass}")
                 click.echo(f"Density = {e.density}")
+
+# ASCII art
+@cli.command(help="Generates ASCII art for an image")
+@click.argument("file_name", help="Name of the image file")
+@click.option("char", default="#", help="The ASCII character in which the art has to be generated")
+def ascii(file_name, char):
+    pass
 
 if __name__ == "__main__":
     cli()
