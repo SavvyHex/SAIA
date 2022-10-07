@@ -13,7 +13,7 @@ LONG_DESCRIPTION = 'A package that performs simple tasks students would require.
 
 # Setting up
 setup(
-    name="saia",
+    name="saiacli",
     version=VERSION,
     author="SavvyHex (Saketh Pai)",
     author_email="<paisaketh@gmail.com>",
