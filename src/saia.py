@@ -1,5 +1,3 @@
-#!/home/savvyhex/anaconda3/bin/python
-
 import periodictable as pt
 import random
 import math
