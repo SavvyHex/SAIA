@@ -170,6 +170,7 @@ def element(num, sym, name):
                 click.echo(f"Mass = {e.mass}")
                 click.echo(f"Density = {e.density}")
 
+# ASCII art
 @cli.command(help="Generates ASCII art for an image and prints it onto the terminal")
 @click.argument("file_name", type=click.File("rb"))
 @click.option("--char", default="#", help="The ASCII character in which the art has to be generated")
@@ -177,6 +178,7 @@ def ascii(file_name, char):
     output = am.from_image_file(file_name, columns=200, char=char)
     click.echo(output)
 
+# Math Streak Quiz
 @cli.command(help="A Math Streak Quiz that ends after a wrong answer")
 def mathquiz():
     score = 0
