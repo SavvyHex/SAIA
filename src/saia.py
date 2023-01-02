@@ -1,8 +1,11 @@
-import periodictable as pt
 import random
 import math
+
+import periodictable as pt
 import click
 import ascii_magic as am
+
+from utils.question import Question
 
 # Utility Methods
 # Converting to superscript
@@ -173,6 +176,26 @@ def element(num, sym, name):
 def ascii(file_name, char):
     output = am.from_image_file(file_name, columns=200, char=char)
     click.echo(output)
+
+@cli.command(help="A Math Streak Quiz that ends after a wrong answer")
+def mathquiz():
+    score = 0
+    run = True
+    while run:
+        question = Question()
+        print(question)
+        option = input().lower()
+        while option not in "abcd":
+            print("Please enter ONLY a, b, c or d...")
+            option = input().lower()
+        if option == question.ans_opt:
+            print("Correct!")
+            score += 1
+        else:
+            print("Wrong!")
+            print(f"The answer is {question.ans_opt}){question.ans}")
+            print(f"Your score was {score}")
+            run = False
 
 if __name__ == "__main__":
     cli()

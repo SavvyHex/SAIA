@@ -3,3 +3,4 @@ README_images/
 dist/
 build/
 *.spec
+__pycache__/
