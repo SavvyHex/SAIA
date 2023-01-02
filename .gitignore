@@ -1,2 +1,5 @@
 tests/
 README_images/
+dist/
+build/
+*.spec
